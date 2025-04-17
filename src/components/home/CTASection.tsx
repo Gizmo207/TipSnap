@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Gift } from 'lucide-react';
+import { ArrowRight, Gift, ScanLine } from 'lucide-react';
 
 const CTASection = () => {
   return (
@@ -23,13 +23,35 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" variant="default" className="bg-white text-tipsnap-darkPurple hover:bg-gray-100" asChild>
+            <Button 
+              size="lg" 
+              variant="default" 
+              className="bg-white text-tipsnap-darkPurple hover:bg-gray-100 transform transition-all duration-300 hover:scale-105 shadow-lg" 
+              asChild
+            >
               <Link to="/signup" className="px-8">
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20" asChild>
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="bg-tipsnap-purple/30 text-white border-white hover:bg-white/20 hover:text-white transition-all duration-300 hover:scale-105" 
+              asChild
+            >
+              <Link to="/split-bill" className="px-6 flex items-center">
+                <ScanLine className="mr-2 h-5 w-5 animate-pulse-gentle" />
+                Scan Receipt
+              </Link>
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/20 transition-all duration-300 hover:scale-105" 
+              asChild
+            >
               <Link to="/split-bill" className="px-6">
                 Try a Demo
               </Link>
